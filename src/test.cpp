@@ -5,9 +5,11 @@ using namespace std;
 class MyClass
 {
 public:
+    //elements
     string title;
     string obj;
 
+    //constructors
     MyClass()
     {
         title = "Nada";
@@ -19,6 +21,8 @@ public:
         title = aTitle;
         obj = aObj;
     }
+    //destructors
+    ~MyClass();
 };
 
 int main()
