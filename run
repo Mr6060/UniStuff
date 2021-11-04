@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+echo "Running $1"
+pushd exec
+./$1
+popd

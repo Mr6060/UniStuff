@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+echo "Compiling"
+pushd exec
+echo Name of file: $1
+g++ -Wall -o $1 ../src/$1.cpp
+popd
