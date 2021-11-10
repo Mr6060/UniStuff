@@ -1,4 +1,4 @@
 @echo off
-pushd build
+pushd exec
 %1
 popd

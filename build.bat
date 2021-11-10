@@ -1,5 +1,5 @@
 @echo off
-pushd build
+pushd exec
 echo Building
 set var=%1
 set name=%var:.cpp=%
