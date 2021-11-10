@@ -9,18 +9,14 @@ struct elemento{
 typedef elemento* Lista;
 
 void inserisciInTesta(Lista& s, int val);
+int contaElementi(Lista s);
 
 inline void inizializza(Lista& s){
     s = NULL;
-    inserisciInTesta(s, 1);
-    inserisciInTesta(s, 2);
-    inserisciInTesta(s, 3);
-    inserisciInTesta(s, 4);
-    inserisciInTesta(s, 5);
 }
 
 void inserisciInTesta(Lista& s, int val){
-    elemento* q = new elemento;
+    Lista q = new elemento;
     q->info = val;
     q->ptr = s;
     s = q;
@@ -89,7 +85,22 @@ void visualizza(Lista s){
         cout << q->info;
         q = q->ptr;
     }
-    cout << '>' << endl;
+    cout << ">\t";
+    int elementi = contaElementi(s);
+    cout << '[' <<elementi << " Elementi]" << endl;
+}
+
+int contaElementi(Lista s){
+    if(s == NULL)
+        return 0;
+
+    elemento* q = s;
+    int c = 0;
+    while( q != NULL){
+        c++;
+        q = q->ptr;
+    }
+    return c;
 }
 
 void distruggi(Lista& s){
@@ -101,6 +112,24 @@ void distruggi(Lista& s){
         delete s;
         s = q;
     }
+}
+
+void reverse(Lista& s){
+    if(s == NULL){
+        cout << "Lista vuota"<<endl;
+        return;
+    }
+    elemento *temp = NULL;
+    elemento *prev = NULL;
+    elemento *current = s;
+
+    while(current != NULL){
+        temp = current->ptr;
+        current->ptr = prev;
+        prev = current;
+        current = temp;
+    }
+    s = prev;
 }
 
 int main(){
@@ -139,6 +168,9 @@ int main(){
                     cout << "Estratto " << val << endl;
                 else   
                     cout << "Estrazione fallita" << endl;
+            case 'r':
+                reverse(lista);
+                break;
         }
         visualizza(lista);
         cout << endl;
