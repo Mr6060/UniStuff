@@ -2,46 +2,38 @@
 #include <cstring>
 using namespace std;
 
-class MyClass
-{
+class MyClass{
 public:
     //elements
     string title;
     string obj;
 
     //constructors
-    MyClass()
-    {
+    MyClass(){
         title = "Nada";
         obj = "NO";
     }
 
-    MyClass(string aTitle, string aObj)
-    {
+    MyClass(string aTitle, string aObj){
         title = aTitle;
         obj = aObj;
     }
     //destructors
-    ~MyClass();
 };
 
-int main()
-{
+int main(){
     int n;
     cout << "Hello world" << endl;
     cout << "suck my dick btw" << endl;
-    do
-    {
+    do{
         cout << "Inserire un numero: ";
         cin >> n;
     } while (n < 0);
 
-    if (n % 2 == 0)
-    {
+    if (n % 2 == 0){
         cout << "Pari" << endl;
     }
-    else
-    {
+    else{
         cout << "Dispari" << endl;
     }
 
@@ -49,5 +41,6 @@ int main()
     cout << test.title << endl;
     MyClass test1("Test", "Altro test");
     cout << test1.title << '\t' << test1.obj << endl;
+    cout << test1.title << endl;
     return 0;
 }
