@@ -1,4 +1,5 @@
 #include <iostream>
+
 using namespace std;
 
 struct elemento{
@@ -139,6 +140,7 @@ int main(){
     visualizza(lista);
     cout << endl;
     while(1){
+        
         cout << "t: Inserisci in testa\np: Inserisci per posizione\nT: Estrai in testa\nP: Estrai per posizione\nInserire un comando: "; 
         cin >> cmd;
         if (cmd == '-')
